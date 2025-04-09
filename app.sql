@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3307
--- Tiempo de generación: 04-04-2025 a las 19:17:04
+-- Tiempo de generación: 09-04-2025 a las 17:47:23
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -34,6 +34,46 @@ CREATE TABLE `app` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `atencion_al_cliente`
+--
+
+CREATE TABLE `atencion_al_cliente` (
+  `id_Atencion_al_cliente` int(10) NOT NULL,
+  `Horario` text NOT NULL,
+  `Correo` varchar(50) NOT NULL,
+  `Lin_Telefonicas` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `informacion`
+--
+
+CREATE TABLE `informacion` (
+  `id_Informacion` int(10) NOT NULL,
+  `Camb_y_devol` text NOT NULL,
+  `Pol_de_envios` text NOT NULL,
+  `Enc_Satisfaccion` text NOT NULL,
+  `Guia_de_Tallas` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `login`
+--
+
+CREATE TABLE `login` (
+  `id_Login` int(10) NOT NULL,
+  `Telefono` int(10) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Contraseña` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `paginas`
 --
 
@@ -42,6 +82,18 @@ CREATE TABLE `paginas` (
   `ProdPag` varchar(50) NOT NULL,
   `AtCPag` int(11) NOT NULL,
   `InfoPag` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pag_principal`
+--
+
+CREATE TABLE `pag_principal` (
+  `id_Pag_Principal` int(10) NOT NULL,
+  `Ruleta_Imagenes` int(10) NOT NULL,
+  `Productos` geometry NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
