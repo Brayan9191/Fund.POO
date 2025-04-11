@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3307
--- Tiempo de generación: 09-04-2025 a las 17:47:23
+-- Tiempo de generación: 11-04-2025 a las 18:38:19
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -42,6 +42,85 @@ CREATE TABLE `atencion_al_cliente` (
   `Horario` text NOT NULL,
   `Correo` varchar(50) NOT NULL,
   `Lin_Telefonicas` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `camb_y_devol`
+--
+
+CREATE TABLE `camb_y_devol` (
+  `id_Camb_y_devol` int(10) NOT NULL,
+  `Pol_de_retractos` varchar(100) NOT NULL,
+  `Pol_garantias` varchar(100) NOT NULL,
+  `Pol_de_cambios` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carrito`
+--
+
+CREATE TABLE `carrito` (
+  `id_Carrito` int(10) NOT NULL,
+  `Cant_prod_en_carrito` int(10) NOT NULL,
+  `Finalizar_compra` varchar(20) NOT NULL,
+  `Volver_al_inicio` varchar(20) NOT NULL,
+  `Producto` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `enc_satisfaccion`
+--
+
+CREATE TABLE `enc_satisfaccion` (
+  `id_Enc_satisfaccion` int(10) NOT NULL,
+  `Pregunta` varchar(100) NOT NULL,
+  `Enviar` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `favoritos`
+--
+
+CREATE TABLE `favoritos` (
+  `id_Favoritos` int(10) NOT NULL,
+  `Productos` varchar(100) NOT NULL,
+  `Filtros` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `filtros`
+--
+
+CREATE TABLE `filtros` (
+  `id_Filtros` int(10) NOT NULL,
+  `Diseño` varchar(100) NOT NULL,
+  `Color` varchar(100) NOT NULL,
+  `Tipo` varchar(100) NOT NULL,
+  `Material` varchar(100) NOT NULL,
+  `Gama_precio` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `guia_de_tallas`
+--
+
+CREATE TABLE `guia_de_tallas` (
+  `id_Guia_de_tallas` int(10) NOT NULL,
+  `Enterizo` varchar(100) NOT NULL,
+  `Brasier` varchar(100) NOT NULL,
+  `Falda` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
